@@ -104,5 +104,35 @@
       <p>&copy; 2025 Express Trucking Company. All Rights Reserved.</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      alert('Welcome to Express Trucking Company! Need freight solutions? Check out our Services page.');
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      const errors = [];
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      if (name.length < 2)        errors.push('Please enter your name.');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Please enter a valid email address.');
+      if (message.length < 10)    errors.push('Message must be at least 10 characters.');
+      
+      if (errors.length) {
+        e.preventDefault();
+        document.getElementById('error-messages').innerHTML =
+          '<ul><li>' + errors.join('</li><li>') + '</li></ul>';
+      }
+    });
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.style.display = window.pageYOffset > 200 ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
