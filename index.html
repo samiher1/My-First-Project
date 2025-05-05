@@ -83,5 +83,20 @@
       <p>&copy; 2025 Express Trucking Company. All Rights Reserved.</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      alert('Welcome to Express Trucking Company! Need freight solutions? Check out our Services page.');
+    });
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.style.display = window.pageYOffset > 200 ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
