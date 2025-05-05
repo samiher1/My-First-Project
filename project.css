@@ -255,6 +255,16 @@ footer {
   .hero h1 {
     font-size: 2.5rem;
   }
+    $(function(){
+      $('.hero-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 5000,
+        dots: true,
+        arrows: false,
+        fade: true,
+        adaptiveHeight: false
+      });
+    });
   #back-to-top {
   position: fixed;
   bottom: 1rem;
